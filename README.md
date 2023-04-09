@@ -1,1 +1,1 @@
-# mcgen
+# MCGen: efficient Minecraft account generation.
