@@ -1,1 +1,14 @@
-# MCGen: efficient Minecraft account generation.
+# MCGen
+
+![Discord](https://img.shields.io/discord/1089974846110302240) ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/happyendermangit/mcgen/static.yml)  ![GitHub](https://img.shields.io/github/license/happyendermangit/mcgen) 
+
+**Efficient Minecraft account generation.**
+
+
++ Secure
++ Fast
++ Free
++ Best
+
+
+**MCGen™ by © Chex**
