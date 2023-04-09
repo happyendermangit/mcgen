@@ -1,224 +1,305 @@
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MCgen</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  </head>
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto+Mono&family=Roboto:wght@500&display=swap');
-body,html{color:#ffff;font-family:"Montserrat"}
-.feature-icon {
-  width: 4rem;
-  height: 4rem;
-  border-radius: .75rem;
-}
-
-.icon-square {
-  width: 3rem;
-  height: 3rem;
-  border-radius: .75rem;
-}
-#first-head{
-  position: relative;
-  overflow: hidden;
-  padding-top: calc(7rem + 72px);
-  padding-bottom: 7rem;
-  background:linear-gradient(to left,#237867 30%,#29ba9d);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: scroll;
-  background-size: cover;
-
-}
-.try-it{
-  position: relative;
-  overflow: hidden;
-  height: fit-content;
-  background:#237867;
-  padding-top:0;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: scroll;
-  background-size: cover;
-
-}
-.navbar{
-  background:linear-gradient(to left,#237867 30%,#29ba9d);
-  box-shadow:0 1px 2px rgba(0,0,0,.3);
-}
-
-
-
-.title{
-  font-weight: bold;
-}
-.btn.btn-success{
-    padding:10px 10px;  
-    height: fit-content;
-    width: fit-content;
-    background-color: #00AA00;
-    border: #00AA00;
-}
-.btn.btn-success:hover{
-    background-color: #04bc04;
-}
-.more-btn{
-    padding:10px;
-    width:100px;
-    height: 50px;
-}
-.scrolled{
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  backdrop-filter: saturate(180%) blur(20px);
-}
-.dark_color{
-    color:black;
-}
-.gg-gift {
- box-sizing: border-box;
- position: relative;
- display: block;
- transform: scale(var(--ggs,1));
- width: 22px;
- height: 14px;
- margin-top: 8px;
- border: 2px solid transparent;
- box-shadow:
- inset 2px 0 0,
- inset -2px 0 0,
- 0 -2px 0,
- inset 0 2px 0,
- inset 0 -2px 0;
- background:
- linear-gradient(to left,
- currentColor 10px,transparent 0),
- linear-gradient(to left,
- currentColor 10px,transparent 0),
- linear-gradient(to left,
- currentColor 10px,transparent 0);
- background-repeat: no-repeat;
- background-size:
- 2px 10px,2px 10px,2px 10px;
- background-position:
- 8px 0,18px -8px,-2px -8px
-}
-
-.gg-gift::after,
-.gg-gift::before {
- content: "";
- display: block;
- box-sizing: border-box;
- position: absolute;
- border-radius: 3px;
- width: 6px;
- height: 8px;
- border: 2px solid;
- top: -10px;
- font-size: 1000px;
-}
-
-.gg-gift::after {
- left: 3px;
- transform: rotate(-45deg)
-}
-
-.gg-gift::before {
- right: 3px;
- transform: rotate(45deg)
-} 
-li{
-  display:flex;
-  align-items: first baseline;
-  float:left;
-}
-.form-control:focus{
-    color:var(--bs-body-color);
-    background-color:var(--bs-body-bg);
-    border-color:#237867;
-    outline:0;
-    box-shadow:0 0 0 .25rem #29ba9d
-}
-  </style>
-    <nav id="navbar" class="nav navbar fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><span><i class="gg-gift"></i>MCgen</span></a>
-    </div>
-    <div class="justify-content-end collapse " id="responsive-navbar-nav"><div class="navbar-nav"><a class="nav-link" href="/get"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-user" class="svg-inline--fa fa-circle-user fa-w-16 mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M399 384.2C376.9 345.8 335.4 320 288 320H224c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM512 256c0 141.4-114.6 256-256 256S0 397.4 0 256S114.6 0 256 0S512 114.6 512 256zM256 272c39.8 0 72-32.2 72-72s-32.2-72-72-72s-72 32.2-72 72s32.2 72 72 72z"></path></svg>GET ACCOUNT</a><a class="nav-link" href="/renew"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="rotate" class="svg-inline--fa fa-rotate fa-w-16 mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M142.9 142.9c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5c0 0 0 0 0 0H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1C73.2 122 55.6 150.7 44.8 181.4c-5.9 16.7 2.9 34.9 19.5 40.8s34.9-2.9 40.8-19.5c7.7-21.8 20.2-42.3 37.8-59.8zM16 312v7.6 .7V440c0 9.7 5.8 18.5 14.8 22.2s19.3 1.7 26.2-5.2l41.6-41.6c87.6 86.5 228.7 86.2 315.8-1c24.4-24.4 42.1-53.1 52.9-83.7c5.9-16.7-2.9-34.9-19.5-40.8s-34.9 2.9-40.8 19.5c-7.7 21.8-20.2 42.3-37.8 59.8c-62.2 62.2-162.7 62.5-225.3 1L185 329c6.9-6.9 8.9-17.2 5.2-26.2s-12.5-14.8-22.2-14.8H48.4h-.7H40c-13.3 0-24 10.7-24 24z"></path></svg>Renew</a><a class="nav-link" href="/install"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="download" class="svg-inline--fa fa-download fa-w-16 mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zM432 456c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"></path></svg>Install</a><a class="nav-link" href="/api"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="code" class="svg-inline--fa fa-code fa-w-20 mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg>API</a><a class="nav-link" href="/support"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-question" class="svg-inline--fa fa-circle-question fa-w-16 mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"></path></svg>Help</a></div></div>
+    <title>MCGen | Open Alpha</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto+Mono&family=Roboto:wght@500&display=swap');
+    body,
+    html {
+        color: #ffff;
+        font-family: "Montserrat"
+    }
     
-  </nav>
-  <body>
+    .feature-icon {
+        width: 4rem;
+        height: 4rem;
+        border-radius: .75rem;
+    }
+    
+    .icon-square {
+        width: 3rem;
+        height: 3rem;
+        border-radius: .75rem;
+    }
+    
+    #first-head {
+        position: relative;
+        overflow: hidden;
+        padding-top: calc(7rem + 72px);
+        padding-bottom: 7rem;
+        background: linear-gradient(to left, #237867 30%, #29ba9d);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: scroll;
+        background-size: cover;
+    }
+    
+    .try-it {
+        position: relative;
+        overflow: hidden;
+        height: fit-content;
+        background: #237867;
+        padding-top: 0;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: scroll;
+        background-size: cover;
+    }
+    
+    .navbar {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    }
+    
+    .title {
+        font-weight: bold;
+    }
+    
+    .btn.btn-success {
+        padding: 10px 10px;
+        height: fit-content;
+        width: fit-content;
+        background-color: #00AA00;
+        border: #00AA00;
+    }
+    
+    .btn.btn-success:hover {
+        background-color: #04bc04;
+    }
+    
+    .more-btn {
+        padding: 10px;
+        width: 100px;
+        height: 50px;
+    }
+    
+    .scrolled {
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+    
+    .dark_color {
+        color: black;
+    }
+    
+    .card {
+        background-color: rgba(20, 20, 20, .8);
+        border-radius: 40px;
+        backdrop-filter: blur(20px) saturate(1.6);
+        -webkit-backdrop-filter: blur(20px) saturate(1.6)
+    }
+    
+    .crd {
+        background-color: rgba(20, 20, 20, .8);
+        border-radius: 40px;
+        backdrop-filter: blur(20px) saturate(1.6);
+        -webkit-backdrop-filter: blur(20px) saturate(1.6)
+    }
+    .stat{
+        background-color: rgba(20, 20, 20, .8);
+        border-radius: 1px;
+    }
+    .form-control:focus {
+        color: var(--bs-body-color);
+        background-color: var(--bs-body-bg);
+        border-color: #237867;
+        outline: 0;
+        box-shadow: 0 0 0 .25rem #29ba9d
+    }
+    
+    #first-head {
+        background-image: url("./Minecraft\ Day\ Background\ HD\ 3200x1800\ by\ 567legodude\ on.png");
+        background-size: fill;
+    }
+    
+    body {
+        scroll-behavior: smooth;
+    }
+    
+    .icon_ {
+        display: inline-block;
+        margin-right: 20px;
+        vertical-align: top;
+    }
+    
+    .fa-2x {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .p_ {
+        margin: 0;
+    }
+    
+    .features {
+        display: inline-block;
+        display: block;
+        align-items: center;
+    }
+    
+    .minecraft-divider {
+  width: 100%;
+  height: 20px;
+  background-color: #7EC850;
+  background-image: linear-gradient(to bottom, transparent 50%, #8EDC59 50%), linear-gradient(#7EC850, #7EC850);
+  background-size: 100% 10px;
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+}
+#features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  
+}
+
+
+</style>
+<div style="border-radius: 0;" class="alert  alert-warning shadow-lg">
+    <div>
+
+        <i class="fa-solid fa-triangle-exclamation" style="color: rgb(0, 0, 0) ;"></i>
+        <span>MCGen is currently in the Open Alpha version, so it will have a lot of bugs.</span>
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/0ebbe03699.js" crossorigin="anonymous"></script>
+<div class="navbar bg-base-100">
+    <div class="flex-1">
+
+        <a class="btn btn-ghost normal-case text-xl">MCGen</a>
+    </div>
+    <div class="flex-none">
+        <ul class="menu menu-horizontal px-1">
+            <li><a class="btn btn-ghost rounded-btn">GET ACCOUNT</a></li>
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost rounded-btn">Install</label>
+                <ul tabindex="0" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-45 mt-4">
+                    <li style="width:40px"><a><i class="fa-solid fa-gift" style="color: #04fb08;"></i>Launcher</a></li>
+                    <li><a><i class="fa-solid fa-gift" style="color: #04fb08;"></i>Authenticator</a></li>
+                </ul>
+            </div>
+            <li><a class="btn btn-ghost rounded-btn">API</a></li>
+            <li><a class="btn btn-ghost rounded-btn">CONTACT US</a></li>
+        </ul>
+    </div>
+</div>
+</nav>
+
+<body>
     <center>
-      <input class="form-control"></input>
-    <div  id="first-head" >
-    <div class="pt-3 px-3 pt-md-5 px-md-5 col-md-5 mx-auto my-5">
-    <h1  style="font-size:50px;"class=" font-weight-bold" class="title"><h1><i class="gg-gift"></i>MCgen </h1>
-    <p class="lead font-weight-normal">McGen is a powerful tool that generates Minecraft accounts quickly and easily. With a user-friendly interface and reliable support, McGen streamlines the account creation process for gamers, server admins, and anyone else who needs Minecraft accounts. Generate single or multiple accounts and get tokens for easy login. Save time and hassle with McGen.
-    <br>
-    <br>
-    <a class="btn btn-success more-btn">Learn more.</a>
-    </p>
-    </div>
-  </div>
-    <div class="pt-3 px-3 pt-md-5 px-md-5 col-md-5 mx-auto my-5">
-    <h1 style="font-weight: bold;">Features : </h1>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <i class="bi bi-gear-wide-connected"></i>
-        </div>
-        <h3 class="fs-2">Efficient Account Generation</h3>
-        <p>Quickly generate Minecraft accounts with McGen's efficient software tool, allowing you to create accounts effortlessly and reliably.</p>
-        <a href="#" class="icon-link">
-          Learn More
-          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-        </a>
-      </div>
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <i class="bi bi-shield-lock-fill"></i>
-        </div>
-        <h3 class="fs-2">Secure Account Tokens</h3>
-        <p>McGen provides you with secure account tokens for the Minecraft accounts you generate, ensuring your account details remain safe.</p>
-        <a href="#" class="icon-link">
-          Learn More
-          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-        </a>
-      </div>
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <i class="bi bi-clock-history"></i>
-        </div>
-        <h3 class="fs-2">Always Up-to-Date</h3>
-        <p>McGen is always up-to-date with new features and improvements added regularly, ensuring a reliable and trustworthy tool for all your account generation needs.</p>
-        <a href="#" class="icon-link">
-          Learn More
-          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-        </a>
-      </div>
+        <div id="first-head">
+            <div style="align-items:center;text-align: center;width:600px;height: fit-content;" id="first-head-card" class="card w-96 bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <center>
+                        <h2 style="font-size:30px;font-weight: bold;">MCGen</h2>
+                        <p>Efficient Minecraft account generation.</p>
+                        <br>
+                        <div>
+                            <div class="icon_">
+                                <i class="fa-solid fa-lock fa-2x"></i>
+                                <p class="p_">Secure</p>
+                            </div>
+                            <div class="icon_">
+                                <i class="fa fa-bolt fa-fw fa-2x"></i>
+                                <p class="p_">Fast</p>
+                            </div>
+                            <div class="icon_">
+                                <i class="fas fa-gift fa-2x"></i>
+                                <p class="p_">Free</p>
+                            </div>
+                            <div class="icon_">
+                                <i class="fa-solid fa-star fa-2x"></i>
+                                <p class="p_">Best</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card-actions justify-end">
+                            <a style="margin:3px" class="btn btn-secondary" href="#features">Try it out!</a>
+                            <a style="margin:3px" class="btn btn-primary" href="">Join our discord</a>
+                            <a style="margin:3px" class="btn btn-accent" href="https://chex.ml/">Chex</a>
 
-    </div>
-    <div style=";">
-      <center>
-      <button class="font-weight-bold btn btn-secondary">Try MCGen Now!</button>
-      </center>
-      </div>
-    </div>
-    </div>
-  </div>
-  <div class="bg-dark">
-      <p style="font-weight: bold;">&copy Happy enderman | MCgen</p>
+                        </div>
+                    </center>
 
-  </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="minecraft-divider"></div>
+        <div id="features" class="bg-mc pt-3 px-3 pt-md-5 px-md-5 col-md-5 mx-auto my-5">
+
+            <div class="crd card w-96  shadow-xl" style="margin-bottom: 20px;">
+                <figure><img src="./secure.png" alt="" /></figure>
+                <div style="text-align: start;" class="card-body">
+                    <h2 class="card-title">Secure!</h2>
+                    <p>MCGen prioritizes the security of your Minecraft accounts above all else. Our tool utilizes the latest encryption and protection technologies to ensure that your generated accounts are safe from prying eyes and malicious attacks. Rest
+                        easy knowing that your accounts are in good hands with MCGen.</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Learn more</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crd card w-96 shadow-xl" style="margin-bottom: 20px;">
+                <figure><img src="./free.png" alt="" /></figure>
+                <div style="text-align: start;" class="card-body">
+                    <h2 class="card-title">Free!</h2>
+                    <p>MCGen's Safe feature provides advanced security measures to ensure the safety of your generated Minecraft accounts, including encryption and two-factor authentication, giving you peace of mind when creating single or multiple accounts
+                        with ease through our user-friendly interface and reliable support.</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Learn more</button>
+                    </div>
+                </div>
+            </div>
+            <div class="crd card w-96 shadow-xl" style="margin-bottom: 20px;">
+                <figure><img src="./fast.png" alt="" /></figure>
+                <div style="text-align: start;" class="card-body">
+                    <h2 class="card-title">Fast!</h2>
+                    <p>MCGen offers a free version of our tool for anyone who needs to generate Minecraft accounts but doesn't have the budget for a paid subscription. With our free version, you can generate up to five accounts per day and still receive
+                        all the benefits of our user-friendly interface and reliable support. Don't let a tight budget hold you back from playing Minecraft or managing your server. Try MCGen's free version today.</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Learn more</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crd card w-96 shadow-xl" style="margin-bottom: 20px;">
+                <figure><img src="./autorenew.png" alt="" /></figure>
+                <div style="text-align: start;" class="card-body">
+                    <h2 class="card-title">Always Up-to-Date!</h2>
+                    <p>MCGen is always up-to-date with new features and improvements added regularly, ensuring a reliable and trustworthy tool for all your free account needs.</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Learn more</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <center>
+            </center>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="bg-dark">
+            <p style="font-weight: bold;">MCGen&#8482; by &#169; Chex</p>
+
+        </div>
     </center>
- 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-  </body>
-  <script>
-    document.getElementById('navbar').addEventListener('scroll',() =>{
-            document.getElementById('navbar').classList.add('scrolled')
+</body>
+<script>
+    document.getElementById('navbar').addEventListener('scroll', () => {
+        document.getElementById('navbar').classList.add('scrolled')
     })
-  </script>
+</script>
+
 </html>
