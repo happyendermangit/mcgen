@@ -11,6 +11,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Get Commit SHA
+        id: commit_sha
+        run: echo "::set-output name=sha::$(git rev-parse HEAD)"
+
       - name: Comment on Commit
         uses: actions/github-script@v4
         env:
@@ -18,11 +22,12 @@ jobs:
         with:
           script: |
             const { owner, repo } = context.repo;
-            const comment = `This is a comment on the latest commit!`;
+            const commitSHA = "${{ steps.commit_sha.outputs.sha }}";
+            const comment = `This is a comment on commit ${commitSHA}!`;
             const { data } = await github.repos.createCommitComment({
               owner,
               repo,
-              commit_sha: github.context.sha,
+              commit_sha: commitSHA,
               body: comment
             });
             console.log(`Comment created: ${data.html_url}`);
